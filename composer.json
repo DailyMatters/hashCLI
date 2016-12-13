@@ -1,0 +1,32 @@
+{
+    "name": "cr/hashCLI",
+    "description": "HashCLI - PHP CLI Tool For hashing",
+    "type": "library",
+    "keywords": ["hash", "cli"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5"
+    },
+    "authors": [
+        {
+            "name": "Cláudio Ribeiro",
+            "email": "claudio.santos.ribeiro@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "bin":[
+        "src/hashCLI"
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    }
+}

@@ -5,11 +5,27 @@ HashCLI is a PHP CLI tool for hashing and verifying hashes generated with the PH
 
 ### Usage ( Taken from the tool help method ):
 
-`php hashCLI.php hash [password]`: To hash the password.
+#### With Composer
 
-`php hashCLI.php check [password] [hash]`: To check if the hash corresponds to the password.
+- Run ```curl -sS https://getcomposer.org/installer | php``` to download the composer.phar.
+- Run ```php composer.phar require cr/hashCLI```.
 
-`php hashCLI.php help`: For help.
+```vendor/bin/hashCLI hash [password]```: To hash the password.
+
+```vendor/bin/hashCLI check [password] [hash]```: To check if the hash corresponds to the password.
+
+```vendor/bin/hashCLI help```: For help.
+
+#### Without Composer
+
+- Run ```git clone https://github.com/DailyMatters/hashCLI.git```.
+- Run ```php build/Build.php``` then get the ```hashCLI.phar```.
+
+`php hashCLI.phar hash [password]`: To hash the password.
+
+`php hashCLI.phar check [password] [hash]`: To check if the hash corresponds to the password.
+
+`php hashCLI.phar help`: For help.
 
 ## License
 
