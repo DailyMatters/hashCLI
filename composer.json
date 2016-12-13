@@ -1,5 +1,5 @@
 {
-    "name": "cr/hashCLI",
+    "name": "cr/hashcli",
     "description": "HashCLI - PHP CLI Tool For hashing",
     "type": "library",
     "keywords": ["hash", "cli"],
