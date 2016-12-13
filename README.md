@@ -1,5 +1,7 @@
 # HashCLI - PHP CLI Tool For hashing
 
+[![Build Status](https://travis-ci.org/DailyMatters/hashCLI.svg?branch=master)](https://travis-ci.org/DailyMatters/hashCLI)
+
 Special thanks to Peter Lee ( @peter279k ) for the PR.
 
 ## What is this?
