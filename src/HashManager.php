@@ -1,5 +1,7 @@
 <?php
 
+namespace cr\hashcli;
+
 class HashManager{
 
 	/**
@@ -9,7 +11,7 @@ class HashManager{
 	 * @return string $hash
 	 */
 	public static function hash( $password ){
-		return password_hash($password, PASSWORD_DEFAULT);
+		return password_hash( $password, PASSWORD_DEFAULT );
 	}
 
 
@@ -20,9 +22,9 @@ class HashManager{
 	 * @param string $hash 
 	 * @return boolean If the hash was generated from the password
 	 */
-	public static function check_hash( $string, $hash ){
+	public static function checkHash( $string, $hash ){
 
-		if( password_verify( $string, $hash )){
+		if( password_verify( $string, $hash ) ){
 			return true;
 		}
 		return false;

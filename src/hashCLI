@@ -1,0 +1,78 @@
+#!/usr/bin/env php
+<?php
+
+$vendorFilePath = array(
+	__DIR__.'/../../autoload.php',
+	__DIR__.'/../vendor/autoload.php',
+	__DIR__.'/vendor/autoload.php'
+);
+
+foreach( $vendorFilePath as $file ){
+    if( file_exists( $file ) ){
+		define( 'HASHCLI_COMPOSER_INSTALL', $file );
+		require HASHCLI_COMPOSER_INSTALL;
+        break;
+    }
+}
+
+use cr\hashcli\HashManager;
+
+if( !defined( 'HASHCLI_COMPOSER_INSTALL' ) ){
+	fwrite( STDERR,
+        'You need to set up the project dependencies using the following commands:'.PHP_EOL.
+        'curl -sS http://getcomposer.org/composer.phar | php then run:'.PHP_EOL.
+        'php composer.phar install' . PHP_EOL );
+    
+	die( 1 );
+}
+
+switch( $argv[1] ){
+
+	case 'hash':
+		if( !isset( $argv[2] ) ){
+			printHelp();
+			break;
+		}
+
+		$password = $argv[2];
+		$hash = HashManager::hash( $password );
+		echo "Password hash: $hash ".PHP_EOL;
+		break;
+
+	case 'check':
+		if( !isset( $argv[2] ) || !isset( $argv[3] ) ){
+			printHelp();
+			break;
+		}
+
+		$password = $argv[2];
+		$hash = $argv[3];
+
+		if( HashManager::checkHash( $password, $hash ) ){
+			echo "Password and hash match.".PHP_EOL;
+			break;
+		}
+		echo "Password and hash do not match.".PHP_EOL;
+		break;
+
+	case 'help':
+	default:
+		printHelp();
+		break;
+
+}
+
+die(0);
+
+/**
+ * Prints help options for the tool
+ *
+ * @return void
+ */
+function printHelp(){
+	echo PHP_EOL;
+	echo "Usage: ".PHP_EOL;
+	echo "php hashCLI.php hash [password]: To hash the password. ".PHP_EOL;
+	echo "php hashCLI.php check [password] [hash]: To check if the hash corresponds to the password. ".PHP_EOL;
+	echo "php hashCLI.php help: For help. ".PHP_EOL;
+}
