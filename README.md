@@ -1,9 +1,11 @@
 # HashCLI - PHP CLI Tool For hashing
 
+Special thanks to Peter Lee ( @peter279k ) for the PR.
+
 ## What is this?
 HashCLI is a PHP CLI tool for hashing and verifying hashes generated with the PHP `password_hash()` method. This tool was born because of a necessity to constantly having to generate new password hashes and check if old passwords hashes were correct.
 
-### Usage ( Taken from the tool help method ):
+### Usage:
 
 #### With Composer
 
