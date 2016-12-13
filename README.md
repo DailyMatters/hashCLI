@@ -31,6 +31,10 @@ HashCLI is a PHP CLI tool for hashing and verifying hashes generated with the PH
 
 `php hashCLI.phar help`: For help.
 
+#### On Packagist
+
+https://packagist.org/packages/cr/hashcli
+
 ## License
 
 The MIT License (MIT)
