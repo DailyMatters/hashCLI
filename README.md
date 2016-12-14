@@ -12,7 +12,7 @@ HashCLI is a PHP CLI tool for hashing and verifying hashes generated with the PH
 #### With Composer
 
 - Run ```curl -sS https://getcomposer.org/installer | php``` to download the composer.phar
-- Run ```php composer.phar require cr/hashcli```.
+- Run ```php composer.phar require cr/hashcli``` ( ```composer require cr/hashcli:dev-master``` since this is not a stable release yet ).
 
 ```vendor/bin/hashCLI hash [password]```: To hash the password.
 
