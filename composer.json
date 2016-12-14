@@ -5,7 +5,8 @@
     "keywords": ["hash", "cli"],
     "license": "MIT",
     "require": {
-        "php": ">=5.5"
+        "php": ">=5.5",
+        "phpunit/phpunit": "^5.7"
     },
     "authors": [
         {
@@ -13,9 +14,6 @@
             "email": "claudio.santos.ribeiro@gmail.com"
         }
     ],
-    "require-dev": {
-        "phpunit/phpunit": "^5.7"
-    },
     "bin":[
         "src/hashCLI"
     ],
